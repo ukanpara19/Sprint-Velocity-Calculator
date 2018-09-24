@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Slider, {createSliderWithTooltip} from 'rc-slider';
 import '../App.css'
-import 'rc-slider/assets/index.css';
+// import 'rc-slider/assets/index.css';
+
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
