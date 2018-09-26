@@ -74,7 +74,6 @@ class Form extends Component {
           <label className='form-label'> Team Members : <span className='slider-result'>{teamMembers}</span></label>
           <SliderWithTooltip
             className='slider-class'
-            name= 'teamMembers'
             min= {0}
             max= {10}
             defaultValue= {7}
@@ -86,7 +85,6 @@ class Form extends Component {
           <label className='form-label'>Days in the sprint : <span className='slider-result'>{daysInSprint}</span></label>
           <SliderWithTooltip
             className='slider-class'
-            name= 'daysInSprint'
             min={0}
             max={30}
             defaultValue= {21}
@@ -98,7 +96,6 @@ class Form extends Component {
           <label className='form-label'> Total days off : <span className='slider-result'>{daysOff}</span></label>
           <SliderWithTooltip
             className='slider-class'
-            name= 'daysOff'
             min={0} 
             max={30}
             defaultValue={21}
@@ -111,7 +108,7 @@ class Form extends Component {
           <button className='button-class-1' type='reset' onClick={this.reloadPage}>Reset</button>
       </div>    
    </form>
-    <hr className='line-break ' />
+    <hr className='line-break '/>
     <h2 className='form-result'>{this.state.teamCapacity}</h2>
   </div>
       );
