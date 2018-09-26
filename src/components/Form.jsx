@@ -36,10 +36,6 @@ class Form extends Component {
       this.setState({daysOff});
     }
 
-    onAfterChange = (value) =>{
-       console.log(value);
-    }
-
     onFormSubmit = (event) =>{
       event.preventDefault();
       const avgVelocity = this.state.averageVelocity
@@ -72,7 +68,6 @@ class Form extends Component {
             defaultValue= {70}
             value={averageVelocity}
             onChange= {this.onSliderChangeAverageVelocity}
-            onAfterChange={this.onAfterChange}
           />
       </div>      
       <div>
@@ -85,7 +80,6 @@ class Form extends Component {
             defaultValue= {7}
             value={teamMembers}
             onChange={this.onSliderChangeTeamMembers}
-            onAfterChange={this.onAfterChange}
           /> 
       </div>
       <div> 
@@ -98,7 +92,6 @@ class Form extends Component {
             defaultValue= {21}
             value={daysInSprint}
             onChange={this.onSliderChangedaysInSprint}
-            onAfterChange={this.onAfterChange}
           />
       </div>      
       <div>
@@ -111,7 +104,6 @@ class Form extends Component {
             defaultValue={21}
             value={daysOff}
             onChange={this.onSliderChangedaysOff}
-            onAfterChange={this.onAfterChange}
           />
       </div>      
       <div>
