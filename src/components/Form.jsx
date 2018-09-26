@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import Slider, {createSliderWithTooltip} from 'rc-slider';
 import '../App.css'
-// import 'rc-slider/assets/index.css';
-
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
@@ -38,10 +36,6 @@ class Form extends Component {
       this.setState({daysOff});
     }
 
-    onAfterChange = (value) =>{
-       console.log(value);
-    }
-
     onFormSubmit = (event) =>{
       event.preventDefault();
       const avgVelocity = this.state.averageVelocity
@@ -49,14 +43,18 @@ class Form extends Component {
       const daysinSprint = this.state.daysInSprint
       const numOfTotalsDaysOff = this.state.daysOff
       const result = (avgVelocity - (((avgVelocity/numOfTeamMembers)/daysinSprint)*numOfTotalsDaysOff)).toFixed(2);
-      const teamCapacity = 'The Team Capacity is '+ result;
 
-      this.setState({ teamCapacity: teamCapacity });
+      if(isNaN(result)){
+          alert("Please enter valid input");
+        }else{
+          const teamCapacity = 'The Team Capacity is '+ result;
+          this.setState({ teamCapacity: teamCapacity });
+        }
       }
 
-     reloadPage = () =>{
-       window.location.reload();
-     }
+    reloadPage = () =>{
+      window.location.reload();
+    }
 
   render(){
     const {averageVelocity, teamMembers, daysInSprint, daysOff} = this.state;
@@ -70,8 +68,6 @@ class Form extends Component {
             defaultValue= {70}
             value={averageVelocity}
             onChange= {this.onSliderChangeAverageVelocity}
-            onAfterChange={this.onAfterChange}
-            required
           />
       </div>      
       <div>
@@ -84,7 +80,6 @@ class Form extends Component {
             defaultValue= {7}
             value={teamMembers}
             onChange={this.onSliderChangeTeamMembers}
-            onAfterChange={this.onAfterChange}
           /> 
       </div>
       <div> 
@@ -97,7 +92,6 @@ class Form extends Component {
             defaultValue= {21}
             value={daysInSprint}
             onChange={this.onSliderChangedaysInSprint}
-            onAfterChange={this.onAfterChange}
           />
       </div>      
       <div>
@@ -110,7 +104,6 @@ class Form extends Component {
             defaultValue={21}
             value={daysOff}
             onChange={this.onSliderChangedaysOff}
-            onAfterChange={this.onAfterChange}
           />
       </div>      
       <div>
