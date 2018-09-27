@@ -12,10 +12,10 @@ class Form extends Component {
 
   getInitialState = () =>{
     const initialState = {
-      averageVelocity: this.defaultValue,
-      teamMembers: this.defaultValue,
-      daysInSprint: this.defaultValue,
-      daysOff: this.defaultValue,
+      averageVelocity: 90,
+      teamMembers: 5,
+      daysInSprint: 10,
+      daysOff: 0,
     };
     return initialState;
   }
@@ -86,8 +86,8 @@ class Form extends Component {
           <SliderWithTooltip
             className='slider-class'
             min={0}
-            max={30}
-            defaultValue= {21}
+            max={20}
+            defaultValue= {10}
             value={daysInSprint}
             onChange={this.onSliderChangedaysInSprint}
           />
@@ -97,8 +97,8 @@ class Form extends Component {
           <SliderWithTooltip
             className='slider-class'
             min={0} 
-            max={30}
-            defaultValue={21}
+            max={10}
+            defaultValue={0}
             value={daysOff}
             onChange={this.onSliderChangedaysOff}
           />
