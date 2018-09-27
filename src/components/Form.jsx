@@ -12,10 +12,10 @@ class Form extends Component {
 
   getInitialState = () =>{
     const initialState = {
-      averageVelocity:  this.defaultValue,
-      teamMembers:  this.defaultValue,
-      daysInSprint:  this.defaultValue,
-      daysOff: this.defaultValue,
+      averageVelocity:  90,
+      teamMembers:  5,
+      daysInSprint:  10,
+      daysOff: 0,
     };
     return initialState;
   }
@@ -44,6 +44,7 @@ class Form extends Component {
       const numOfTotalsDaysOff = this.state.daysOff
       const result = (avgVelocity - (((avgVelocity/numOfTeamMembers)/daysinSprint)*numOfTotalsDaysOff)).toFixed(2);
 
+      //Error handling if no input is given whem initail state is set to default
       if(isNaN(result)){
           alert("Please enter valid input");
         }else{
