@@ -66,7 +66,7 @@ class Form extends Component {
           <label name='AverageVelocity' className='form-label'> Average Velocity : <span className='slider-result'>{averageVelocity}</span></label>
           <SliderWithTooltip
             className='slider-class'
-            defaultValue= {70}
+            defaultValue= {90}
             value={averageVelocity}
             onChange= {this.onSliderChangeAverageVelocity}
           />
@@ -77,7 +77,7 @@ class Form extends Component {
             className='slider-class'
             min= {0}
             max= {10}
-            defaultValue= {7}
+            defaultValue= {5}
             value={teamMembers}
             onChange={this.onSliderChangeTeamMembers}
           /> 
