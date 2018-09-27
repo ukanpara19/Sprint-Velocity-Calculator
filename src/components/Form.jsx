@@ -12,10 +12,10 @@ class Form extends Component {
 
   getInitialState = () =>{
     const initialState = {
-      averageVelocity: this.defaultValue,
-      teamMembers: this.defaultValue,
-      daysInSprint: this.defaultValue,
-      daysOff: this.defaultValue,
+      averageVelocity:  90,
+      teamMembers:  5,
+      daysInSprint:  10,
+      daysOff: 0,
     };
     return initialState;
   }
@@ -44,6 +44,7 @@ class Form extends Component {
       const numOfTotalsDaysOff = this.state.daysOff
       const result = (avgVelocity - (((avgVelocity/numOfTeamMembers)/daysinSprint)*numOfTotalsDaysOff)).toFixed(2);
 
+      //Error handling if no input is given whem initail state is set to default
       if(isNaN(result)){
           alert("Please enter valid input");
         }else{
@@ -65,7 +66,7 @@ class Form extends Component {
           <label name='AverageVelocity' className='form-label'> Average Velocity : <span className='slider-result'>{averageVelocity}</span></label>
           <SliderWithTooltip
             className='slider-class'
-            defaultValue= {70}
+            defaultValue= {90}
             value={averageVelocity}
             onChange= {this.onSliderChangeAverageVelocity}
           />
@@ -76,7 +77,7 @@ class Form extends Component {
             className='slider-class'
             min= {0}
             max= {10}
-            defaultValue= {7}
+            defaultValue= {5}
             value={teamMembers}
             onChange={this.onSliderChangeTeamMembers}
           /> 
@@ -86,8 +87,8 @@ class Form extends Component {
           <SliderWithTooltip
             className='slider-class'
             min={0}
-            max={30}
-            defaultValue= {21}
+            max={20}
+            defaultValue= {10}
             value={daysInSprint}
             onChange={this.onSliderChangedaysInSprint}
           />
@@ -97,8 +98,8 @@ class Form extends Component {
           <SliderWithTooltip
             className='slider-class'
             min={0} 
-            max={30}
-            defaultValue={21}
+            max={10}
+            defaultValue={0}
             value={daysOff}
             onChange={this.onSliderChangedaysOff}
           />
