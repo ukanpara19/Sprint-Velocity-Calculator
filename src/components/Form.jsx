@@ -12,10 +12,10 @@ class Form extends Component {
 
   getInitialState = () =>{
     const initialState = {
-      averageVelocity: 90,
-      teamMembers: 5,
-      daysInSprint: 10,
-      daysOff: 0,
+      averageVelocity:  this.defaultValue,
+      teamMembers:  this.defaultValue,
+      daysInSprint:  this.defaultValue,
+      daysOff: this.defaultValue,
     };
     return initialState;
   }
